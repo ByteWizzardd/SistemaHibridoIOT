@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "author": "Antigravity - Sistema Hibrido IoT",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    
+    { "type": "wokwi-ssd1306", "id": "oled", "top": -150, "left": -200, "attrs": {} },
+    
+    { "type": "wokwi-servo", "id": "servo", "top": -150, "left": 150, "attrs": {} },
+    { "type": "wokwi-buzzer", "id": "buzzer", "top": -50, "left": 250, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn", "top": 100, "left": 250, "attrs": { "color": "blue" } },
+
+    { "type": "wokwi-led", "id": "led_n_r", "top": -250, "left": -100, "attrs": { "color": "red", "label": "N_Rojo" } },
+    { "type": "wokwi-led", "id": "led_n_a", "top": -250, "left": -70, "attrs": { "color": "yellow", "label": "N_Amar" } },
+    { "type": "wokwi-led", "id": "led_n_v", "top": -250, "left": -40, "attrs": { "color": "green", "label": "N_Verd" } },
+
+    { "type": "wokwi-led", "id": "led_s_r", "top": -200, "left": -100, "attrs": { "color": "red", "label": "S_Rojo" } },
+    { "type": "wokwi-led", "id": "led_s_a", "top": -200, "left": -70, "attrs": { "color": "yellow", "label": "S_Amar" } },
+    { "type": "wokwi-led", "id": "led_s_v", "top": -200, "left": -40, "attrs": { "color": "green", "label": "S_Verd" } },
+
+    { "type": "wokwi-led", "id": "led_e_r", "top": -250, "left": 20, "attrs": { "color": "red", "label": "E_Rojo" } },
+    { "type": "wokwi-led", "id": "led_e_a", "top": -250, "left": 50, "attrs": { "color": "yellow", "label": "E_Amar" } },
+    { "type": "wokwi-led", "id": "led_e_v", "top": -250, "left": 80, "attrs": { "color": "green", "label": "E_Verd" } },
+
+    { "type": "wokwi-led", "id": "led_o_r", "top": -200, "left": 20, "attrs": { "color": "red", "label": "O_Rojo" } },
+    { "type": "wokwi-led", "id": "led_o_a", "top": -200, "left": 50, "attrs": { "color": "yellow", "label": "O_Amar" } },
+    { "type": "wokwi-led", "id": "led_o_v", "top": -200, "left": 80, "attrs": { "color": "green", "label": "O_Verd" } },
+
+    { "type": "wokwi-resistor", "id": "r_n_r", "top": -300, "left": -100, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_n_a", "top": -300, "left": -70, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_n_v", "top": -300, "left": -40, "attrs": { "value": "220" } },
+    
+    { "type": "wokwi-resistor", "id": "r_s_r", "top": -300, "left": -10, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_s_a", "top": -300, "left": 20, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_s_v", "top": -300, "left": 50, "attrs": { "value": "220" } },
+    
+    { "type": "wokwi-resistor", "id": "r_e_r", "top": -300, "left": 100, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_e_a", "top": -300, "left": 130, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_e_v", "top": -300, "left": 160, "attrs": { "value": "220" } },
+    
+    { "type": "wokwi-resistor", "id": "r_o_r", "top": -300, "left": 210, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_o_a", "top": -300, "left": 240, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_o_v", "top": -300, "left": 270, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:GND.1", "oled:GND", "black", [] ],
+    [ "esp:3V3", "oled:VCC", "red", [] ],
+    [ "esp:D21", "oled:SDA", "blue", [] ],
+    [ "esp:D22", "oled:SCL", "yellow", [] ],
+
+    [ "esp:GND.1", "servo:GND", "black", [] ],
+    [ "esp:VIN", "servo:V+", "red", [] ],
+    [ "esp:D23", "servo:PWM", "orange", [] ],
+
+    [ "esp:GND.1", "buzzer:1", "black", [] ],
+    [ "esp:D4", "buzzer:2", "purple", [] ],
+
+    [ "esp:GND.2", "btn:2.a", "black", [] ],
+    [ "esp:D2", "btn:1.a", "green", [] ],
+
+    [ "r_n_r:2", "led_n_r:A", "red", [] ],
+    [ "r_n_a:2", "led_n_a:A", "yellow", [] ],
+    [ "r_n_v:2", "led_n_v:A", "green", [] ],
+
+    [ "r_s_r:2", "led_s_r:A", "red", [] ],
+    [ "r_s_a:2", "led_s_a:A", "yellow", [] ],
+    [ "r_s_v:2", "led_s_v:A", "green", [] ],
+
+    [ "r_e_r:2", "led_e_r:A", "red", [] ],
+    [ "r_e_a:2", "led_e_a:A", "yellow", [] ],
+    [ "r_e_v:2", "led_e_v:A", "green", [] ],
+
+    [ "r_o_r:2", "led_o_r:A", "red", [] ],
+    [ "r_o_a:2", "led_o_a:A", "yellow", [] ],
+    [ "r_o_v:2", "led_o_v:A", "green", [] ],
+
+    [ "esp:D15", "r_n_r:1", "red", [] ],
+    [ "esp:D18", "r_n_a:1", "yellow", [] ],
+    [ "esp:D19", "r_n_v:1", "green", [] ],
+
+    [ "esp:D5", "r_s_r:1", "red", [] ],
+    [ "esp:TX2", "r_s_a:1", "yellow", [] ],
+    [ "esp:RX2", "r_s_v:1", "green", [] ],
+
+    [ "esp:D32", "r_e_r:1", "red", [] ],
+    [ "esp:D33", "r_e_a:1", "yellow", [] ],
+    [ "esp:D25", "r_e_v:1", "green", [] ],
+
+    [ "esp:D26", "r_o_r:1", "red", [] ],
+    [ "esp:D27", "r_o_a:1", "yellow", [] ],
+    [ "esp:D14", "r_o_v:1", "green", [] ],
+
+    [ "esp:GND.2", "led_n_r:C", "black", [] ],
+    [ "esp:GND.2", "led_n_a:C", "black", [] ],
+    [ "esp:GND.2", "led_n_v:C", "black", [] ],
+    
+    [ "esp:GND.2", "led_s_r:C", "black", [] ],
+    [ "esp:GND.2", "led_s_a:C", "black", [] ],
+    [ "esp:GND.2", "led_s_v:C", "black", [] ],
+    
+    [ "esp:GND.2", "led_e_r:C", "black", [] ],
+    [ "esp:GND.2", "led_e_a:C", "black", [] ],
+    [ "esp:GND.2", "led_e_v:C", "black", [] ],
+    
+    [ "esp:GND.2", "led_o_r:C", "black", [] ],
+    [ "esp:GND.2", "led_o_a:C", "black", [] ],
+    [ "esp:GND.2", "led_o_v:C", "black", [] ]
+  ],
+  "dependencies": {}
+}

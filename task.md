@@ -35,15 +35,15 @@
 
 > Objetivo: que los LEDs cambien de fase como un semáforo real, primero en Wokwi, luego en hardware.
 
-- [ ] **2.1** Abrir la simulación en Wokwi con el código que ya tienes funcionando
-- [ ] **2.2** Probar que las 4 fases del semáforo funcionan correctamente:
+- [x] **2.1** Abrir la simulación en Wokwi con el código que ya tienes funcionando
+- [x] **2.2** Probar que las 4 fases del semáforo funcionan correctamente:
   - Fase 0: N-S verde, E-O rojo
   - Fase 1: N-S amarillo, E-O rojo
   - Fase 2: N-S rojo, E-O verde
   - Fase 3: N-S rojo, E-O amarillo
-- [ ] **2.3** Probar el botón peatonal (click → todo rojo → buzzer → servo)
-- [ ] **2.4** Probar enviar `EMERGENCIA` por el monitor serial
-- [ ] **2.5** Modificar el código para que acepte tiempos por serial:
+- [x] **2.3** Probar el botón peatonal (click → todo rojo → buzzer → servo)
+- [x] **2.4** Probar enviar `EMERGENCIA` por el monitor serial
+- [x] **2.5** Modificar el código para que acepte tiempos por serial:
   - Python enviará: `NS:5000,EO:3000\n`
   - ESP32 parsea y actualiza `tiempo_Verde_NS` y `tiempo_Verde_EO`
 - [ ] **2.6** *(Si ya tienes el ESP32 físico)* Armar el circuito en protoboard:
@@ -183,14 +183,14 @@
 ## 📍 ¿Dónde estás ahora?
 
 ```
-[██████░░░░░░░░░░░░░░░░░░░░░░░░] ~20%
+[██████████████████░░░░░░░░░░░░] ~60%
 
-✅ Bloque 1: Parcialmente listo (tienes Python, falta estructura de carpetas)
-✅ Bloque 2: Simulación en Wokwi funcionando (falta recibir tiempos por serial)
-⬜ Bloque 3: Pendiente — EMPIEZA AQUÍ
-⬜ Bloque 4: Pendiente
-⬜ Bloque 5: Pendiente
+✅ Bloque 1: Listo (Entorno configurado y carpetas creadas)
+✅ Bloque 2: Listo (Simulación en Wokwi completa con tiempos dinámicos, peatonal y emergencia)
+✅ Bloque 3: Listo (Simulador Python, Lógica Difusa y Visualización en tiempo real completados)
+⬜ Bloque 4: Pendiente — Nube + Dashboard web (Firebase + Next.js/HTML)
+⬜ Bloque 5: Pendiente — Validación + Artículo científico
 ```
 
 > [!TIP]
-> **Siguiente paso inmediato:** Crear el archivo `python/simulador_trafico.py` (tarea 3.1). ¿Quieres que lo hagamos juntos ahora?
+> **Siguiente paso inmediato:** Probar la integración completa (Bloque 3.8) ejecutando el visualizador de Python conectado al puerto serie virtual del simulador de Wokwi, o avanzar directamente al **Bloque 4** para conectar el ESP32 a Firebase y desarrollar el Dashboard web en tiempo real.

@@ -1,0 +1,49 @@
+# ==========================================
+# CREDENCIALES Y CONFIGURACIONES LOCALES (CRÍTICO)
+# ==========================================
+.env
+.env.local
+*.pem
+secrets/
+
+# ==========================================
+# DEPENDENCIAS DE PYTHON (Backend / Scripts)
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.pytest_cache/
+
+# ==========================================
+# ARCHIVOS DEL ESP32 (C++ / Microcontroladores)
+# ==========================================
+build/
+.pio/
+*.bin
+*.elf
+*.hex
+
+# ==========================================
+# INTERFAZ Y DASHBOARD (Node.js / React)
+# ==========================================
+node_modules/
+dist/
+build/
+.next/
+npm-debug.log
+
+# ==========================================
+# ARCHIVOS DEL SISTEMA OPERATIVO (Windows)
+# ==========================================
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ==========================================
+# DATOS TEMPORALES O PESADOS
+# ==========================================
+Datos/*.csv
+Datos/*.sqlite3
+*.log
